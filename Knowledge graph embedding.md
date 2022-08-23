@@ -130,6 +130,8 @@
 
         * RESCAL[6] (Statistical Relational Learning Approach) 
 
+            <font color=Fuchsia> Three-way model which performs fairly good for relationships which occur frequently **but it performs poor for the rare relationships and leads to major over-fitting.**</font>
+
             $$f_r(T) = h^tM_rt = \sum_{i=0}^{d-1}\sum_{j=0}^{d-1} [M_r]_{ij}* [h]_i *[t]_j$$
 
             where $h, t \in R^d$ are vector representation of entities, and $M_r \in R^{d*d}$ is a matrix representation of $r^{th}$ relation.
@@ -153,12 +155,17 @@
 
         * TATEC[7]  stands for Two And Three-way Embeddings Combination.
 
+            *first stage use two different embeddings, and then combine and fine-tuning them* 
+
             two way interactions: $f_r^1(h,t)= h^Tr + t^Tr + h^TDt$
 
             three way interactions: $f_r^2(h,t)=h^TM_rt$
 
             $$h_r(h,t) = f_r^1(h,t) + f_r^2(h,t)$$
             $$h_r(h,t) = h^Tr + t^Tr + h^TDt + h^TM_rt$$
+
+
+            <font color=FireBrick> Time complexity and the space complexity of TATEC is same as RESCAL as TATEC extends RESCAL. </font>
 
 
         * DistMult [8]
