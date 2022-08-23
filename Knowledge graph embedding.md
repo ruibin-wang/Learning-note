@@ -153,7 +153,12 @@
 
         * TATEC[7]  stands for Two And Three-way Embeddings Combination.
 
+            two way interactions: $f_r^1(h,t)= h^Tr + t^Tr + h^TDt$
 
+            three way interactions: $f_r^2(h,t)=h^TM_rt$
+
+            $$h_r(h,t) = f_r^1(h,t) + f_r^2(h,t)$$
+            $$h_r(h,t) = h^Tr + t^Tr + h^TDt + h^TM_rt$$
 
 
         * DistMult [8]
