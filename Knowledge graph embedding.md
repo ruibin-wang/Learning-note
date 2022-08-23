@@ -1,4 +1,3 @@
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default">
 # Knowledge graph embedding
 
 1. Definition
@@ -184,7 +183,7 @@
 
 
 
-</script>
+
 
 
 
