@@ -5,7 +5,7 @@
     Knowledge graph embedding is a approach to ***transform Knowledge Graphs*** (nodes, edges and feature vectors) ***into a low dimensional continuous vector*** space that preserves various graph structure information, etc.  
 
 
-    A map of all algorithms[9]:
+    ***A map of all algorithms[9]:***
 
     <img src=./Pictures/KG_embedding/figure9.png>
 
