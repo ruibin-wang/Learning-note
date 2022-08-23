@@ -1,8 +1,13 @@
-# Knowledge graph embedding
+# Knowledge representation learning models
 
 1. Definition
 
     Knowledge graph embedding is a approach to ***transform Knowledge Graphs*** (nodes, edges and feature vectors) ***into a low dimensional continuous vector*** space that preserves various graph structure information, etc.  
+
+
+    A map of all algorithms[9]:
+
+    <img src=./Pictures/KG_embedding/figure9.png>
 
 
 2. Embedding methods
@@ -289,3 +294,5 @@
 [7] Alberto Garc ́ıa-Dur ́an, Antoine Bordes, and Nicolas Usunier. 2014. *Effective blending of two and threeway interactions for modeling multi-relational data.* In Machine Learning and Knowledge Discovery in Databases, pages 434–449, Berlin, Heidelberg. Springer Berlin Heidelberg.
 
 [8] Yinwei Wei, Xiangnan He, Xiang Wang, Richang Hong, Liqiang Nie, and Tat Seng Chua. 2019. *MMGCN: Multi-modal graph convolution network for personalized recommendation of micro-video.*MM 2019 - Proc. 27th ACM Int. Conf. Multimed., pages 1437–1445.
+
+[9] Ji, S., Pan, S., Cambria, E., Marttinen, P. and Philip, S.Y., 2021. *A survey on knowledge graphs: Representation, acquisition, and applications.* IEEE Transactions on Neural Networks and Learning Systems, 33(2), pp.494-514.
