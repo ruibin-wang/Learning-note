@@ -123,8 +123,51 @@
 
 
 
-2. Semantic Matching models
+    * Semantic Matching models
 
+        Use similarity-based scoring function.
+
+
+        * RESCAL[6] (Statistical Relational Learning Approach) 
+
+            $$f_r(T) = h^tM_rt = \sum_{i=0}^{d-1}\sum_{j=0}^{d-1} [M_r]_{ij}* [h]_i *[t]_j$$
+
+            where $h, t \in R^d$ are vector representation of entities, and $M_r \in R^{d*d}$ is a matrix representation of $r^{th}$ relation.
+
+            <font color=green> In a simple way: $h^TM_rt$ </font>
+
+            we use weighted sum of all the pairwise interactions between the latent features of the entities $h$ and  $t$.
+
+            $\chi_{ijk}=1$ means exist a relation and if $\chi_{ijk}=0$ means their relation is unknown.
+
+            <center class="half">
+
+            <img src=./Pictures/KG_embedding/figure5.png width = 40%><img src=./Pictures/KG_embedding/figure6.png width = 47%> 
+
+
+            </center>
+
+
+
+
+
+        * TATEC[7]  stands for Two And Three-way Embeddings Combination.
+
+
+
+
+        * DistMult [8]
+
+
+
+        * HolE
+
+
+
+        * ComplEx
+
+
+        * ANALOGY
 
 
 
