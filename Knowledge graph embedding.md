@@ -47,7 +47,7 @@
 
              TransR models entities and relation in different embedding space.Each entity is mapped into relation space.
 
-             Score function:  $-||M_rh + r - M_rt||_2$
+             Score function:  $ -||M_rh + r - M_rt||_2 $
 
              <img src=./Pictures/KG_embedding/figure3.png width = 50%>
 
