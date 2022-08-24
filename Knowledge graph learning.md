@@ -35,7 +35,7 @@ The embedding space should follow three conditions, i.e., differentiability, cal
 
     As showned in the Figure 2(a) above.
 
-    * **TransE**[1]  represents entities and relations in d-dimension vector space, $h,r,t \in R^d$
+    * **TransE**[1]  represents entities and relations in d-dimension vector space, $ h,r,t \in R^ d $
 
 
         <center class='half'>
@@ -43,7 +43,7 @@ The embedding space should follow three conditions, i.e., differentiability, cal
         </center>
 
 
-        Score function $ h $: 
+        Score function: 
 
         $$-||h + r - t||_{1/2}$$ 
 
