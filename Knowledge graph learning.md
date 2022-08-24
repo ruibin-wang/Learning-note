@@ -45,10 +45,11 @@ The embedding space should follow three conditions, i.e., differentiability, cal
         <center class='half'>
 
         <img src=./Pictures/KG_embedding/figure1.png >
-        <div padding: > Figure 3 </div>
+        Figure 3
         
         </center>
 
+        <center class='half'> Figure </center>
 
 
         Score function: $$-||h + r - t||_{1/2}$$ 
@@ -77,6 +78,8 @@ The embedding space should follow three conditions, i.e., differentiability, cal
 
         Scoring function: $$-||(h-w_r^Thw_r)+r-(t-w_r^Ttw_r)||_2^2$$
 
+
+        
 
 
         To track the problem of insufficiency of a single space for both entities and relations. <font color=FireBrick>TransR[3] projected entities into relation space.</font>
