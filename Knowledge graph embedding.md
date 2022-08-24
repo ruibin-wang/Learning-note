@@ -10,9 +10,9 @@
     <img src=./Pictures/KG_embedding/figure9.png>
 
 
-2. Embedding methods
+2.  Knowledge representation learning models
 
-    * Translation models
+    * Translational distance models
 
         <font color=DarkGreen>*Use distance-based measures to generate the similarity score for a pair of entities and their relationship.*</font>
 
