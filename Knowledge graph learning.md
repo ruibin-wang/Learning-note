@@ -1,4 +1,4 @@
-# Knowledge representation learning
+# Knowledge Representation Learning
 
 
 <font size=3> **Definition** </font>
@@ -13,8 +13,10 @@ Then this note will present four section about the knowledge representation lear
 
 
 <center class='half'>
-<img src=./Pictures/KG_embedding/figure9.png > Figure 1
+<img src=./Pictures/KG_embedding/figure9.png >
 </center>
+
+<p align='center'> Figure 1 </p>
 
 ---
 
