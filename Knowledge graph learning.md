@@ -13,10 +13,7 @@ Then this note will present four section about the knowledge representation lear
 
 
 <center class='half'>
-
-<img src=./Pictures/KG_embedding/figure9.png >
-<div padding: > Figure 1 </div>
-
+<img src=./Pictures/KG_embedding/figure9.png > Figure 1
 </center>
 
 ---
@@ -47,7 +44,7 @@ The embedding space should follow three conditions, i.e., differentiability, cal
 
 
         Score function: 
-        
+
         $$-||h + r - t||_{1/2}$$ 
 
         ```python
