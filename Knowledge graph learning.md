@@ -16,7 +16,7 @@ Then this note will present four section about the knowledge representation lear
 <img src=./Pictures/KG_embedding/figure9.png >
 </center>
 
-<p align='center'> Figure 1 </p>
+<p align='center'> <font color=DarkOliveGreen>Figure 1 </font></p>
 
 ---
 
@@ -28,21 +28,24 @@ including the  vector, matrix and tensor space, also the  complex vector space, 
 The embedding space should follow three conditions, i.e., differentiability, calculation possibility, and definability of a scoring function
 
 <center class='half'>
-<img src=./Pictures/KG_embedding/figure10.png> Figure 2
+<img src=./Pictures/KG_embedding/figure10.png>
 </center>
 
+<p align='center'> <font color=DarkOliveGreen> Figure 2 </font></p>
 
 
 * Point-wise space( Euclidean space):
 
     As showned in the Figure 2(a) above.
 
-    * **TransE**[1]  represents entities and relations in d-dimension vector space, $ h,r,t \in R^ d $
+    * **TransE**[1]  represents entities and relations in d-dimension vector space, $ h,r,t \in R^ d $ it is shown in the Figure 3(a)
 
 
         <center class='half'>
-        <img src=./Pictures/KG_embedding/figure1.png > Figure 3       
+        <img src=./Pictures/KG_embedding/figure1.png >    
         </center>
+
+        <p align='center'> <font color=DarkOliveGreen> Figure 3 </font></p>
 
 
         Score function: 
@@ -84,9 +87,11 @@ The embedding space should follow three conditions, i.e., differentiability, cal
 
     * **TransR [3]**
 
-        TransR models entities and relation in different embedding space.Each entity is mapped into relation spaceby a projection matrix $ M_r \in R^ {d \times d \times d} $.
+        TransR models entities and relation in different embedding space. Each entity is mapped into relation space by a projection matrix $ M_r \in R^ {d \times d \times d} $. As shown in Figure 3(c)
 
-        Score function:  $ -||M_rh + r - M_rt||_2 $
+        Score function:  
+        
+        $$ -||M_rh + r - M_rt||_2 $$
 
         
 
