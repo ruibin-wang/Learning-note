@@ -82,7 +82,7 @@ The embedding space should follow three conditions, i.e., differentiability, cal
 
     * **TransR [3]**
 
-        TransR models entities and relation in different embedding space.Each entity is mapped into relation spaceby a projection matrix $ M_r \in R^ {d*d*d} $.
+        TransR models entities and relation in different embedding space.Each entity is mapped into relation spaceby a projection matrix $ M_r \in R^ {d \times d \times d} $.
 
         Score function:  $ -||M_rh + r - M_rt||_2 $
 
