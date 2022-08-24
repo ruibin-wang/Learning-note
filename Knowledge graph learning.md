@@ -44,8 +44,8 @@ The embedding space should follow three conditions, i.e., differentiability, cal
 
         <center class='half'>
 
-        <img src=./Pictures/KG_embedding/figure1.png >
-        Figure 3
+        <img src=./Pictures/KG_embedding/figure1.png >Figure 3
+        
         
         </center>
 
