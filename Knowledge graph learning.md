@@ -29,8 +29,7 @@ including the  vector, matrix and tensor space, also the  complex vector space, 
 The embedding space should follow three conditions, i.e., differentiability, calculation possibility, and definability of a scoring function
 
 <center class='half'>
-<img src=./Pictures/KG_embedding/figure10.png>
-<div> Figure 2 </div>
+<img src=./Pictures/KG_embedding/figure10.png> Figure 2
 </center>
 
 
@@ -43,16 +42,13 @@ The embedding space should follow three conditions, i.e., differentiability, cal
 
 
         <center class='half'>
-
-        <img src=./Pictures/KG_embedding/figure1.png >Figure 3
-        
-        
+        <img src=./Pictures/KG_embedding/figure1.png > Figure 3       
         </center>
 
-        <center class='half'> Figure </center>
 
-
-        Score function: $$-||h + r - t||_{1/2}$$ 
+        Score function: 
+        
+        $$-||h + r - t||_{1/2}$$ 
 
         ```python
         def TransE(self, head, relation, tail, mode):
@@ -76,7 +72,9 @@ The embedding space should follow three conditions, i.e., differentiability, cal
 
         As shown in the Figure 3(b), the vectors $h$ and $t$ are projected in the relation hyperplane.
 
-        Scoring function: $$-||(h-w_r^Thw_r)+r-(t-w_r^Ttw_r)||_2^2$$
+        Scoring function: 
+        
+        $$-||(h-w_r^Thw_r)+r-(t-w_r^Ttw_r)||_2^2$$
 
 
         
