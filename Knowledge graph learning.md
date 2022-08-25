@@ -439,6 +439,13 @@ The embedding space should follow three conditions, i.e., differentiability, cal
         </center> 
 
         <p align=center> <font color=DarkOliveGreen> Figure8 </font> </p>
+
+        Scoring function
+
+        $$\sum_{l=1}^L h^{(l)T}R^{(l)t^{(l)}}$$
+
+        $$h^{(l)}, t^{(l)} \in R^2 \qquad R^{(l)} \in D_K$$ 
+
         
 
 
@@ -449,6 +456,23 @@ The embedding space should follow three conditions, i.e., differentiability, cal
 <font size=3> **2. Scoring function (measuring the plausibility of facts)**</font>
 
 
+Distance-based scoring function measures the plausibility of facts by calculating the distance between entities, where addictive translation with relations as $h + r \approx t$ is widely used.
+
+Semantic similarity based scoring measures the plausibility of facts by semantic matching. It usually adopts a multiplicative formulation, i.e., $h^TM_r \approx t^T $, to transform head entity near the tail in the representation space.
+
+<center class='half'>
+<img src=./Pictures/KG_embedding/figure17.png >
+</center> 
+
+<p align=center> <font color=DarkOliveGreen> Figure9 </font> </p>
+
+
+* **Translational distancebased scoring**
+
+
+
+
+* **Semantic similarity-based scoring**
 
 
 <font size=3> **3.  Encoding models (modeling the semantic interaction of facts)**</font>
