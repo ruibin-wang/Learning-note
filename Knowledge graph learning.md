@@ -345,7 +345,55 @@ The embedding space should follow three conditions, i.e., differentiability, cal
 
 * Manifold and group
 
-    * **ManifoldE []**
+    A manifold is a topological space, which could be defined as a set of points with neighborhoods by the set theory.
+
+    The group is algebraic structures defined in abstract algebra.
+
+    <font color=green>
+    Previous point-wise modeling is an ill-posed algebraic system where the number of scoring equations is far more than the number of entities and relations. 
+    
+    Moreover, embeddings are restricted in an overstrict geometric form even in some methods with subspace projection.
+
+    </font>
+
+
+    * **ManifoldE [19]**
+
+        This method introduced two settings of manifold-based embedding, Sphere and Hyperplane. examples can be found in Figure1(d) and Figure6
+
+
+        <center class='half'>
+        <img src=./Pictures/KG_embedding/figure13.png width=70%>
+        </center>
+
+        <p align=center> <font color=DarkOliveGreen> Figure6: Visualization of embedding for Manifold-based models. (a) corresponds to the Sphere setting where all the tail entities are supposed to lay in the sphere. As Clock Dial is matched by the two facts, it should lay in both spheres. (b) corresponds to the Hyperplane setting where Clock Dial should lay and does lay in both hyperplanes, making embedding more precise. </font> </p>
+
+        
+        For the sphere setting, Reproducing Kernel Hilbert Space is used to represent the mainfold function.
+
+        Hyperplane is introduced to enhance the model with intersected embeddings. 
+
+
+        ManifoldE relaxes the real-valued point-wise space into manifold space with a more expressive representation from the geometric perspective. When the manifold function and relation-specific manifold parameter are set to zero, the manifold collapses into a point.
+
+
+        $$||M(h,r,t)-D_r^2||_2^2$$
+
+        $$h,r,t \in R^d$$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -394,24 +442,25 @@ The embedding space should follow three conditions, i.e., differentiability, cal
 
 [9] Ji, S., Pan, S., Cambria, E., Marttinen, P. and Philip, S.Y., 2021. *A survey on knowledge graphs: Representation, acquisition, and applications.* IEEE Transactions on Neural Networks and Learning Systems, 33(2), pp.494-514.
 
-[10] Richard Socher, Danqi Chen, Christopher D. Manning and Andrew Y. Ng. “Reasoning With Neural Tensor Networks for Knowledge Base Completion” neural information processing systems (2013): n. pag.
+[10] Richard Socher, Danqi Chen, Christopher D. Manning and Andrew Y. Ng. “*Reasoning With Neural Tensor Networks for Knowledge Base Completion*” neural information processing systems (2013): n. pag.
 
-[11] Zhanqiu Zhang, Jianyu Cai, Yongdong Zhang, & Jie Wang (2019). Learning Hierarchy-Aware Knowledge Graph Embeddings for Link Prediction national conference on artificial intelligence.
+[11] Zhanqiu Zhang, Jianyu Cai, Yongdong Zhang, & Jie Wang (2019). *Learning Hierarchy-Aware Knowledge Graph Embeddings for Link Prediction* national conference on artificial intelligence.
 
-[12] Guoliang Ji, Shizhu He, Liheng Xu, Kang Liu, & Jun Zhao (2015). Knowledge Graph Embedding via Dynamic Mapping Matrix international joint conference on natural language processing.
+[12] Guoliang Ji, Shizhu He, Liheng Xu, Kang Liu, & Jun Zhao (2015). *Knowledge Graph Embedding via Dynamic Mapping Matrix* international joint conference on natural language processing.
 
-[13] Han Xiao, Minlie Huang, Yu Hao, & Xiaoyan Zhu (2015). TransA: An Adaptive Approach for Knowledge Graph Embedding.. arXiv: Computation and Language.
+[13] Han Xiao, Minlie Huang, Yu Hao, & Xiaoyan Zhu (2015). *TransA: An Adaptive Approach for Knowledge Graph Embedding*.. arXiv: Computation and Language.
 
-[14]  Fan, M.; Zhou, Q.; Chang, E.; and Zheng, T. F. 2014. Transition-based knowledge graph embedding with relational mapping properties. In Proceedings of the 28th Pacific Asia Conference on Language, Information, and Computation, 328–337.
+[14]  Fan, M.; Zhou, Q.; Chang, E.; and Zheng, T. F. 2014. *Transition-based knowledge graph embedding with relational mapping properties.* In Proceedings of the 28th Pacific Asia Conference on Language, Information, and Computation, 328–337.
 
-[15] Théo Trouillon, Johannes Welbl, Sebastian Riedel, Eric Gaussier, & Guillaume Bouchard (2016). Complex embeddings for simple link prediction international conference on machine learning.
+[15] Théo Trouillon, Johannes Welbl, Sebastian Riedel, Eric Gaussier, & Guillaume Bouchard (2016). *Complex embeddings for simple link prediction* international conference on machine learning.
 
-[16] Shuai Zhang, Yi Tay, Lina Yao, & Qi Liu (2019). Quaternion Knowledge Graph Embeddings neural information processing systems.
+[16] Shuai Zhang, Yi Tay, Lina Yao, & Qi Liu (2019). *Quaternion Knowledge Graph Embeddings* neural information processing systems.
 
-[17] Shizhu He, Kang Liu, Guoliang Ji, & Jun Zhao (2015). Learning to Represent Knowledge Graphs with Gaussian Embedding conference on information and knowledge management.
+[17] Shizhu He, Kang Liu, Guoliang Ji, & Jun Zhao (2015). *Learning to Represent Knowledge Graphs with Gaussian Embedding* conference on information and knowledge management.
 
-[18] Han Xiao, Minlie Huang, & Xiaoyan Zhu (2016). TransG : A Generative Model for Knowledge Graph Embedding meeting of the association for computational linguistics.
- 
+[18] Han Xiao, Minlie Huang, & Xiaoyan Zhu (2016). *TransG : A Generative Model for Knowledge Graph Embedding* meeting of the association for computational linguistics.
+
+[19] Han Xiao, Minlie Huang, Yu Hao, & Xiaoyan Zhu (2015). *From One Point to A Manifold: Orbit Models for Knowledge Graph Embedding*.. arXiv: Artificial Intelligence.
 
 
 
