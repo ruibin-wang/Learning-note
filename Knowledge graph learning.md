@@ -435,7 +435,7 @@ The embedding space should follow three conditions, i.e., differentiability, cal
          DihEdral proposes a dihedral symmetry group preserving a 2-dimensional polygon. It utilizes a finite non-Abelian group to preserve the relational properties of symmetry/skew-symmetry, inversion, and composition effectively with the rotation and reflection properties in the dihedral group.
 
         <center class='half'>
-        <img src=./Pictures/KG_embedding/figure16.png width = 70%>
+        <img src=./Pictures/KG_embedding/figure16.png width = 50%>
         </center> 
 
         <p align=center> <font color=DarkOliveGreen> Figure8 </font> </p>
