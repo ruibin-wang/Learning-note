@@ -13,7 +13,7 @@ Then this note will present four section about the knowledge representation lear
 
 
 <center class='half'>
-<img src=./Pictures/KG_embedding/figure9.png >
+<img src=./Pictures/KG_embedding/figure9.png>
 </center>
 
 <p align='center'> <font color=DarkOliveGreen>Figure 1 </font></p>
@@ -42,7 +42,7 @@ The embedding space should follow three conditions, i.e., differentiability, cal
 
 
         <center class='half'>
-        <img src=./Pictures/KG_embedding/figure1.png >    
+        <img src=./Pictures/KG_embedding/figure1.png>    
         </center>
 
         <p align='center'> <font color=DarkOliveGreen> Figure 3 </font></p>
@@ -280,6 +280,14 @@ The embedding space should follow three conditions, i.e., differentiability, cal
          the Hamilton product $h \bigotimes r$, is used as compositional operator for head entity and relation.
 
 
+        <center class='half'>
+        <img src=./Pictures/KG_embedding/figure12.png>
+        </center>
+
+        <p align=center> <font color=DarkOliveGreen> Figure6 </font> </p>
+
+
+
     
 
     <font color=red> *Conclusion* </font>
@@ -291,22 +299,53 @@ The embedding space should follow three conditions, i.e., differentiability, cal
 
 
 
-
-    
-    
-
-
-
-
-
-
-
 * Guassian distribution:
+
+    * **KG2E [17]**
+    
+        Inspired by Gaussian word embedding， KG2E  introduces Gaussian distribution to deal with the *(un)certainties of entities and relations*.
+
+        KG2E  embedded entities and relations into multi-dimensional Gaussian distribution $H \sim  N( \mu_h, \sum_h )$ and $T \sim N(\mu_t, \sum_t)$.
+
+        The mean vector $\mu$ indicates entities and relations' position, and the covariance matrix $\sum$ models their (un)certainties.
+
+        Following the translational principle, the probability distribution of entity transformation can be presented as:
+
+        $$H-T = P_e \sim N(\mu_h-\mu_t, \sum_h+ \sum_t)$$
+
+
+        <font color='red'> Scoring function:</font>
+
+        $$\int _{x \in R^{k_e}} {N(x; \mu_r, \sum_r) \ log(\frac{N(x; \mu_e, \sum_e)}{N(x; \mu_r, \sum_r})}dx $$
+
+
+        $$\mu_h , \mu_t \in R^d$$  
+
+        $$log{\int_{x \in R^{k_e}} N(x; \mu_e, \sum_e)N(x; \mu_r, \sum_r) dx}$$
+
+        $$\sum_h, \sum_t \in R^{d \times d}$$
+
+
+
+    * **TransG [18]**
+
+        TransG represents entities with Gaussian distributions, while it draws a mixture of Gaussian distribution for relation embedding, where the $m^{th}$ component translation vector of relation $r$ is denoted as
+
+        $$u_{r,m}=h-t \sim N(\mu_t-\mu_h,(\sigma_h^2+\sigma_t^2)I)$$
+
+        Scoring function
+
+        $$\sum_i \pi_r^i exp(-\frac{||\mu_h+\mu_r^i-\mu_t||}{\sigma_h^2+\sigma_t^2})$$
+
+        
+
 
 
 
 
 * Manifold and group
+
+    * **ManifoldE []**
 
 
 
@@ -369,6 +408,10 @@ The embedding space should follow three conditions, i.e., differentiability, cal
 
 [16] Shuai Zhang, Yi Tay, Lina Yao, & Qi Liu (2019). Quaternion Knowledge Graph Embeddings neural information processing systems.
 
+[17] Shizhu He, Kang Liu, Guoliang Ji, & Jun Zhao (2015). Learning to Represent Knowledge Graphs with Gaussian Embedding conference on information and knowledge management.
+
+[18] Han Xiao, Minlie Huang, & Xiaoyan Zhu (2016). TransG : A Generative Model for Knowledge Graph Embedding meeting of the association for computational linguistics.
+ 
 
 
 
