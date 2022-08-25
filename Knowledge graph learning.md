@@ -461,7 +461,9 @@ Distance-based scoring function measures the plausibility of facts by calculatin
 Semantic similarity based scoring measures the plausibility of facts by semantic matching. It usually adopts a multiplicative formulation, i.e., $h^TM_r \approx t^T $, to transform head entity near the tail in the representation space.
 
 <center class='half'>
+
 <img src=./Pictures/KG_embedding/figure17.png width = 50%>
+
 </center> 
 
 <p align=center> <font color=DarkOliveGreen> Figure9 </font> </p>
