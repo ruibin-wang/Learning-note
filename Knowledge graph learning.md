@@ -385,30 +385,61 @@ The embedding space should follow three conditions, i.e., differentiability, cal
     * **MuRP[20]**
 
         Knowledge graph relations exhibit multiple properties, such as symmetry, asymmetry, and transitivity. Certain knowledge graph relations, such as hypernym and has_part, induce a hierarchical structure over entities, suggesting that embedding them in hyperbolic rather than Euclidean space may lead to improved representations.  Based on this intuition, MuRP focus on embedding multi-relational knowledge graph data in hyperbolic space. [not convinced]
+        
+        In the Hyperbolic space, a multidimensional Riemannian manifold with a constant negative curvature  $-c \ (c>0) : B^{d,c} = \{ x \in R^d: ||x||^2  < \frac{1}{c}\}$
 
-         MuRP represents the multi-relational knowledge graph in Poincare ball of hyperbolic space $B_c^d = {x \in R^d:c||x||^2 < 1}$. <font color=red>*While it fails to capture logical patterns and suffers from constant curvature.*</font>
-
-
-
-
+        MuRP represents the multi-relational knowledge graph in Poincare ball of hyperbolic space $B_c^d = {x \in R^d:c||x||^2 < 1}$. <font color=red>*While it fails to capture logical patterns and suffers from constant curvature.*</font>
 
 
+        <center class='half'>
+        <img src=./Pictures/KG_embedding/figure14.png>
+        </center>
+
+        <p align=center> <font color=DarkOliveGreen> Figure7 </font> </p>
 
 
+        Scoring function: As shown in the figure7.
 
+        Poincare ball of hyperbolic space
+        
+        $$-d_B(exp_0^c(R \ log_0^c(h), t \ \oplus_c r)^2 + b_h +b_t)$$
 
+        $$h,t,r \in B_c^d \qquad b_h,b_t \in R$$
 
+    
 
+    * **TorusE [21]**
 
+        TorusE solves the regularization problem of TransE via embedding in an n-dimensional torus space which is a compact Lie group.
 
+        The torus space is defined as:
 
+        $$\pi \ : R^n \rightarrow T^n \ , x \rightarrow [x]$$
 
+        Entites and relations are denoted as  $[h], [r], [t] \in T^n$
 
+        As shown in the Figure7
 
+        <center class='half'>
+        <img src=./Pictures/KG_embedding/figure15.png width = 70%>
+        </center> 
 
+        <p align=center> <font color=DarkOliveGreen> Figure7 </font> </p>
 
+        Scoring function:
 
+        $$min_{(x,y) \in ([h]+[r]) \times [t]} ||x-y||_i$$
 
+    * **DihEdral [22]**
+
+         DihEdral proposes a dihedral symmetry group preserving a 2-dimensional polygon. It utilizes a finite non-Abelian group to preserve the relational properties of symmetry/skew-symmetry, inversion, and composition effectively with the rotation and reflection properties in the dihedral group.
+
+        <center class='half'>
+        <img src=./Pictures/KG_embedding/figure16.png width = 70%>
+        </center> 
+
+        <p align=center> <font color=DarkOliveGreen> Figure8 </font> </p>
+        
 
 
 
@@ -476,6 +507,10 @@ The embedding space should follow three conditions, i.e., differentiability, cal
 
 [19] Han Xiao, Minlie Huang, Yu Hao, & Xiaoyan Zhu (2015). *From One Point to A Manifold: Orbit Models for Knowledge Graph Embedding*.. arXiv: Artificial Intelligence.
 
-[20] Ivana Balažević, Carl Allen, & Timothy M. Hospedales (2019). Multi-relational Poincaré Graph Embeddings arXiv e-prints.
+[20] Ivana Balažević, Carl Allen, & Timothy M. Hospedales (2019). *Multi-relational Poincaré Graph Embeddings *arXiv e-prints.
+
+[21] Takuma Ebisu, & Ryutaro Ichise (2017). *TorusE: Knowledge Graph Embedding on a Lie Group* arXiv: Artificial Intelligence.
+
+[22] Canran Xu, & Ruijiang Li (2019). *Relation Embedding with Dihedral Group in Knowledge Graph* arXiv: Computation and Language.
 
 
