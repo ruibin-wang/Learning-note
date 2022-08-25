@@ -379,7 +379,21 @@ The embedding space should follow three conditions, i.e., differentiability, cal
 
         $$||M(h,r,t)-D_r^2||_2^2$$
 
-        $$h,r,t \in R^d$$ 
+        $$h,r,t \in R^d$$
+
+
+    * **MuRP[20]**
+
+        Knowledge graph relations exhibit multiple properties, such as symmetry, asymmetry, and transitivity. Certain knowledge graph relations, such as hypernym and has_part, induce a hierarchical structure over entities, suggesting that embedding them in hyperbolic rather than Euclidean space may lead to improved representations.  Based on this intuition, MuRP focus on embedding multi-relational knowledge graph data in hyperbolic space. [not convinced]
+
+         MuRP represents the multi-relational knowledge graph in Poincare ball of hyperbolic space $B_c^d = {x \in R^d:c||x||^2 < 1}$. <font color=red>While it fails to capture logical patterns and suffers from constant curvature.</font>
+
+
+
+
+
+
+
 
 
 
@@ -462,6 +476,6 @@ The embedding space should follow three conditions, i.e., differentiability, cal
 
 [19] Han Xiao, Minlie Huang, Yu Hao, & Xiaoyan Zhu (2015). *From One Point to A Manifold: Orbit Models for Knowledge Graph Embedding*.. arXiv: Artificial Intelligence.
 
-
+[20] Ivana Balažević, Carl Allen, & Timothy M. Hospedales (2019). Multi-relational Poincaré Graph Embeddings arXiv e-prints.
 
 
