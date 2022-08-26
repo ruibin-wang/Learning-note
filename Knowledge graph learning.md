@@ -471,6 +471,23 @@ Semantic similarity based scoring measures the plausibility of facts by semantic
 
 * **Translational distancebased scoring**
 
+    * Structural embedding (SE) uses two projection matrices and $L1$ distance to learn structural embedding as
+
+        $$f_r(h,t)=||M_{r,1}h-M_{r,2}t||_{L_1}$$
+    
+    *  Another way is aims to learn embeddings by representing relations as translations from head to tail entities. 
+
+        $$f_r(h,t)=||h+r-t||_{L_1/L_2}$$
+    
+
+
+        TransE by assuming that the added embedding of $h + r$ should be close to the embedding of $t$ with the scoring function. 
+         
+         TransH projects entities and relations into a hyperplane, TransR introduces separate projection spaces for entities and relations, and TransD constructs dynamic mapping matrices $M_{rp}=r_ph_p^T + I$ and $M_{rt} = r_pt_p^T + I$ by the projection vectors $h_p, tp, rp \in R^n$. 
+         
+         By replacing Euclidean distance, TransA  uses Mahalanobis distance to enable more adaptive metric learning.
+
+          Previous methods used additive score functions, TransF [35] relaxes the strict translation and uses dot product as $f_r(h, t) = (h + r)^Tt$.
 
 
 
