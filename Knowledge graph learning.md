@@ -487,7 +487,18 @@ Semantic similarity based scoring measures the plausibility of facts by semantic
          
          By replacing Euclidean distance, TransA  uses Mahalanobis distance to enable more adaptive metric learning.
 
-          Previous methods used additive score functions, TransF [35] relaxes the strict translation and uses dot product as $f_r(h, t) = (h + r)^Tt$.
+        Previous methods used additive score functions, TransF relaxes the strict translation and uses dot product as $f_r(h, t) = (h + r)^Tt$.
+
+         ITransF enables hidden concepts discovery and statistical strength transferring by learning associations between relations and concepts via sparse attention vectors, with scoring function defined as
+
+         $$f_r (h, t) =∥\alpha_r^H · D · h + r − α_r^T · D · t∥_t$$
+
+         $D \in R^{n \times d \times d}$ is stacked concept projection matrices of entities and relations and $\alpha_r^H \ , \alpha_r^T$
+
+
+
+
+        
 
 
 
