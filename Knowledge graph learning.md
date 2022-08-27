@@ -521,6 +521,38 @@ Semantic similarity based scoring measures the plausibility of facts by semantic
 
 * **Semantic similarity-based scoring**
 
+    * **SME[23]**  
+
+        proposes to semantically match separate combinations of entity-relation pairs of $(h, r)$ and $(r, t)$.  Its scoring function is defined with two versions of matching blocks - linear and bilinear block, i.e.,
+
+        linear matching block:
+        $$g_{left}(h,t)=M_{l,1}h^T+M_{l,2}r^T+b_l^T$$
+
+        $$g_{right}(r,t)=M_{r,1}t^T+M_{r,2}r^T+b_r^T$$
+
+
+        
+        bilinear form is:
+        $$g_{left}(h,r)= (M_{l,1}h) \ \circ \  (M_{l,2}r) +b_l^T $$
+        $$g_{right}(r,t)= (M_{r,1}t) \ \circ \  (M_{r,2}r) +b_r^T $$
+
+        **Scoring function:**
+
+        $$f_r(h,t) = g_{left}(h,r)^T \ g_{right}(r,t)$$
+
+
+        <center class='half'>
+        <img src=./Pictures/KG_embedding/figure19.png>
+        </center> 
+        <p align=center> <font color=DarkOliveGreen> Figure10 </font> </p>
+
+
+
+
+
+
+
+
 
 
 
@@ -585,10 +617,12 @@ Semantic similarity based scoring measures the plausibility of facts by semantic
 
 [19] Han Xiao, Minlie Huang, Yu Hao, & Xiaoyan Zhu (2015). *From One Point to A Manifold: Orbit Models for Knowledge Graph Embedding*.. arXiv: Artificial Intelligence.
 
-[20] Ivana Balažević, Carl Allen, & Timothy M. Hospedales (2019). *Multi-relational Poincaré Graph Embeddings *arXiv e-prints.
+[20] Ivana Balažević, Carl Allen, & Timothy M. Hospedales (2019). *Multi-relational Poincaré Graph Embeddings* arXiv e-prints.
 
 [21] Takuma Ebisu, & Ryutaro Ichise (2017). *TorusE: Knowledge Graph Embedding on a Lie Group* arXiv: Artificial Intelligence.
 
 [22] Canran Xu, & Ruijiang Li (2019). *Relation Embedding with Dihedral Group in Knowledge Graph* arXiv: Computation and Language.
+
+[23] Xavier Glorot, Antoine Bordes, Jason Weston, & Yoshua Bengio (2013). *A Semantic Matching Energy Function for Learning with Multi-relational Data* international conference on learning representations.
 
 
