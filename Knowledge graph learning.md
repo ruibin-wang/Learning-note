@@ -483,17 +483,24 @@ Semantic similarity based scoring measures the plausibility of facts by semantic
 
         TransE by assuming that the added embedding of $h + r$ should be close to the embedding of $t$ with the scoring function. 
          
-         TransH projects entities and relations into a hyperplane, TransR introduces separate projection spaces for entities and relations, and TransD constructs dynamic mapping matrices $M_{rp}=r_ph_p^T + I$ and $M_{rt} = r_pt_p^T + I$ by the projection vectors $h_p, tp, rp \in R^n$. 
-         
-         By replacing Euclidean distance, TransA  uses Mahalanobis distance to enable more adaptive metric learning.
+        TransH projects entities and relations into a hyperplane, TransR introduces separate projection spaces for entities and relations, and TransD constructs dynamic mapping matrices $M_{rp}=r_ph_p^T + I$ and $M_{rt} = r_pt_p^T + I$ by the projection vectors $h_p, tp, rp \in R^n$. 
+        
+        By replacing Euclidean distance, TransA  uses Mahalanobis distance to enable more adaptive metric learning.
 
         Previous methods used additive score functions, TransF relaxes the strict translation and uses dot product as $f_r(h, t) = (h + r)^Tt$.
 
-         ITransF enables hidden concepts discovery and statistical strength transferring by learning associations between relations and concepts via sparse attention vectors, with scoring function defined as
+        ITransF enables hidden concepts discovery and statistical strength transferring by learning associations between relations and concepts via sparse attention vectors, with scoring function defined as
 
-         $$f_r (h, t) =∥\alpha_r^H · D · h + r − α_r^T · D · t∥_t$$
+        $$f_r (h, t) =∥\alpha_r^H · D · h + r − α_r^T · D · t∥_t$$
 
-         $D \in R^{n \times d \times d}$ is stacked concept projection matrices of entities and relations and $\alpha_r^H \ , \alpha_r^T$
+        $D \in R^{n \times d \times d}$ is stacked concept projection matrices of entities and relations and $\alpha_r^H \ , \alpha_r^T$
+
+        TransAt[23] integrates relation attention mechanism with translational embedding.
+
+        
+
+
+
 
 
 
@@ -566,5 +573,7 @@ Semantic similarity based scoring measures the plausibility of facts by semantic
 [21] Takuma Ebisu, & Ryutaro Ichise (2017). *TorusE: Knowledge Graph Embedding on a Lie Group* arXiv: Artificial Intelligence.
 
 [22] Canran Xu, & Ruijiang Li (2019). *Relation Embedding with Dihedral Group in Knowledge Graph* arXiv: Computation and Language.
+
+[23] Wei Qian, Cong Fu, Yu Zhu, Deng Cai, & Xiaofei He (2018). *Translating Embeddings for Knowledge Graph Completion with Relation Attention Mechanism.*. international joint conference on artificial intelligence.
 
 
