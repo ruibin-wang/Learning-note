@@ -547,6 +547,15 @@ Semantic similarity based scoring measures the plausibility of facts by semantic
         <p align=center> <font color=DarkOliveGreen> Figure10 </font> </p>
 
 
+    * **DistMult [24]**
+
+        By restricting relation matrix $M_r$ to be diagonal for multi-relational representation learning, DistMult proposes a simplified bilinear formulation defined as:
+
+        $$f_r(h,t)= h^T \ diag(M_r) \ t$$
+
+
+
+
 
 
 
@@ -625,4 +634,5 @@ Semantic similarity based scoring measures the plausibility of facts by semantic
 
 [23] Xavier Glorot, Antoine Bordes, Jason Weston, & Yoshua Bengio (2013). *A Semantic Matching Energy Function for Learning with Multi-relational Data* international conference on learning representations.
 
+[24] Bishan Yang, Wen-tau Yih, Xiaodong He, Jianfeng Gao, & Li Deng (2014). *Embedding Entities and Relations for Learning and Inference in Knowledge Bases* arXiv: Computation and Language.
 
