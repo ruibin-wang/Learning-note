@@ -552,6 +552,32 @@ Semantic similarity based scoring measures the plausibility of facts by semantic
         By restricting relation matrix $M_r$ to be diagonal for multi-relational representation learning, DistMult proposes a simplified bilinear formulation defined as:
 
         $$f_r(h,t)= h^T \ diag(M_r) \ t$$
+        $$h,r,t \in R^d$$
+    
+
+
+    * **HolE[25]**
+
+        To capture productive interactions in relational data and compute efficiently, HolE introduces a circular correlation of embedding, which can be interpreted as a compressed tensor product, to learn compositional representations.
+
+
+
+
+
+
+
+
+
+
+    * **HolEx[26]**
+
+        HolEx defines a perturbed holographic compositional operator.
+
+        $$p(a,b;c) = (c \ \circ a) \ \star \ b $$
+
+        where $c$ is a fixed vector.  HolEx interpolates the HolE and full tensor product method.  It can be viewed as linear concatenation of perturbed HolE
+
+
 
 
 
@@ -636,3 +662,6 @@ Semantic similarity based scoring measures the plausibility of facts by semantic
 
 [24] Bishan Yang, Wen-tau Yih, Xiaodong He, Jianfeng Gao, & Li Deng (2014). *Embedding Entities and Relations for Learning and Inference in Knowledge Bases* arXiv: Computation and Language.
 
+[25] Maximilian Nickel, Lorenzo Rosasco, & Tomaso Poggio (2015). *Holographic Embeddings of Knowledge Graphs* national conference on artificial intelligence.
+
+[26] Yexiang Xue, Yang Yuan, Zhitian Xu, & Ashish Sabharwal (2018). *Expanding Holographic Embeddings for Knowledge Completion* neural information processing systems.
