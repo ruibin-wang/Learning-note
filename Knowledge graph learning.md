@@ -160,13 +160,13 @@ The embedding space should follow three conditions, i.e., differentiability, cal
 
    
 
-        <font color=red> *Conclusion* </font>
+    <font color=red> *Conclusion* </font>
 
-         TransE by assuming that the added embedding of $h + r$ should be close to the embedding of $t$ with the scoring function. 
-         
-         TransH projects entities and relations into a hyperplane, TransR introduces separate projection spaces for entities and relations, and TransD constructs dynamic mapping matrices $M_{rp}=r_ph_p^T + I$ and $M_{rt} = r_pt_p^T + I$ by the projection vectors $h_p, tp, rp \in R^n$. 
-         
-         By replacing Euclidean distance, TransA  uses Mahalanobis distance to enable more adaptive metric learning.
+    TransE by assuming that the added embedding of $h + r$ should be close to the embedding of $t$ with the scoring function. 
+    
+    TransH projects entities and relations into a hyperplane, TransR introduces separate projection spaces for entities and relations, and TransD constructs dynamic mapping matrices $M_{rp}=r_ph_p^T + I$ and $M_{rt} = r_pt_p^T + I$ by the projection vectors $h_p, tp, rp \in R^n$. 
+    
+    By replacing Euclidean distance, TransA  uses Mahalanobis distance to enable more adaptive metric learning.
         
 
 
@@ -275,9 +275,9 @@ The embedding space should follow three conditions, i.e., differentiability, cal
 
     * **QuatE [16]**
 
-         QuatE extends the complex-valued space into hypercomplex $h, t, r \in H^d$ by a quaternion $Q = a + bi + cj + dk$ with three imaginary components, where the quaternion inner product. 
-         
-         the Hamilton product $h \bigotimes r$, is used as compositional operator for head entity and relation.
+        QuatE extends the complex-valued space into hypercomplex $h, t, r \in H^d$ by a quaternion $Q = a + bi + cj + dk$ with three imaginary components, where the quaternion inner product. 
+        
+        the Hamilton product $h \bigotimes r$, is used as compositional operator for head entity and relation.
 
 
         <center class='half'>
@@ -432,7 +432,7 @@ The embedding space should follow three conditions, i.e., differentiability, cal
 
     * **DihEdral [22]**
 
-         DihEdral proposes a dihedral symmetry group preserving a 2-dimensional polygon. It utilizes a finite non-Abelian group to preserve the relational properties of symmetry/skew-symmetry, inversion, and composition effectively with the rotation and reflection properties in the dihedral group.
+        DihEdral proposes a dihedral symmetry group preserving a 2-dimensional polygon. It utilizes a finite non-Abelian group to preserve the relational properties of symmetry/skew-symmetry, inversion, and composition effectively with the rotation and reflection properties in the dihedral group.
 
         <center class='half'>
         <img src=./Pictures/KG_embedding/figure16.png width = 50%>
@@ -483,9 +483,9 @@ Semantic similarity based scoring measures the plausibility of facts by semantic
 
         TransE by assuming that the added embedding of $h + r$ should be close to the embedding of $t$ with the scoring function. 
          
-        TransH projects entities and relations into a hyperplane, TransR introduces separate projection spaces for entities and relations, and TransD constructs dynamic mapping matrices $M_{rp}=r_ph_p^T + I$ and $M_{rt} = r_pt_p^T + I$ by the projection vectors $h_p, tp, rp \in R^n$. 
-        
-        By replacing Euclidean distance, TransA  uses Mahalanobis distance to enable more adaptive metric learning.
+         TransH projects entities and relations into a hyperplane, TransR introduces separate projection spaces for entities and relations, and TransD constructs dynamic mapping matrices $M_{rp}=r_ph_p^T + I$ and $M_{rt} = r_pt_p^T + I$ by the projection vectors $h_p, tp, rp \in R^n$. 
+         
+         By replacing Euclidean distance, TransA  uses Mahalanobis distance to enable more adaptive metric learning.
 
         Previous methods used additive score functions, TransF relaxes the strict translation and uses dot product as $f_r(h, t) = (h + r)^Tt$.
 
@@ -495,21 +495,38 @@ Semantic similarity based scoring measures the plausibility of facts by semantic
 
         $D \in R^{n \times d \times d}$ is stacked concept projection matrices of entities and relations and $\alpha_r^H \ , \alpha_r^T$
 
-        TransAt[23] integrates relation attention mechanism with translational embedding.
-
-        
-
-
-
-
 
 
 
         
+
+    <center class='half'>
+    <img src=./Pictures/KG_embedding/figure18.png>
+    </center> 
+    <p align=center> <font color=DarkOliveGreen> Figure9 </font> </p>
+
+    **TransAt**[23]  integrates relation attention mechanism with translational embedding, as shown in the Figure9. The scoring function of TransAt is shown as below:
+
+    $$P_r(\sigma(r_h)h) + r - P_r(\sigma(r_t)t)$$
+
+    $$h,t,r \ \in R^d$$
+
+    **TransMS** [24]  transmits multi-directional semantics with nonlinear functions and linear bias vectors, with the scoring function as
+
+    $$f_r(h,t) = ||-tanh(t \circ r) \circ h + r - tanh(h \circ r) \circ t + \alpha \cdot (h \circ t)||_{l_{1/2}}$$
+
+    **KG2E** in Gaussian space and **ManifoldE**  with manifold also use the translational distance-based scoring function. KG2E uses two scoring methods, i.e, asymmetric KL-divergence and symmetric expected likelihood.
 
 
 
 * **Semantic similarity-based scoring**
+
+
+
+
+
+
+
 
 
 <font size=3> **3.  Encoding models (modeling the semantic interaction of facts)**</font>
@@ -573,7 +590,5 @@ Semantic similarity based scoring measures the plausibility of facts by semantic
 [21] Takuma Ebisu, & Ryutaro Ichise (2017). *TorusE: Knowledge Graph Embedding on a Lie Group* arXiv: Artificial Intelligence.
 
 [22] Canran Xu, & Ruijiang Li (2019). *Relation Embedding with Dihedral Group in Knowledge Graph* arXiv: Computation and Language.
-
-[23] Wei Qian, Cong Fu, Yu Zhu, Deng Cai, & Xiaofei He (2018). *Translating Embeddings for Knowledge Graph Completion with Relation Attention Mechanism.*. international joint conference on artificial intelligence.
 
 
