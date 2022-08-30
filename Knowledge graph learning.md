@@ -551,7 +551,7 @@ Semantic similarity based scoring measures the plausibility of facts by semantic
 
         By restricting relation matrix $M_r$ to be diagonal for multi-relational representation learning, DistMult proposes a simplified bilinear formulation defined as:
 
-        $$f_r(h,t)= h^T \ diag(M_r) \ t$$
+        $$f_r(h,t)= h^\mathrm T \ diag(M_r) \ t$$
         $$h,r,t \in R^d$$
     
 
@@ -576,7 +576,7 @@ Semantic similarity based scoring measures the plausibility of facts by semantic
 
         Focusing on multi-relational inference  ANALOGY models analogical structures of relational data. It's scoring function is defined as:
 
-        $$f_r(h,t) = h^TM_rt$$
+        $$f_r(h,t) = h^\mathrm T \ M_rt$$
 
         with relation matrix constrained to be normal matrices in linear mapping, i.e.,  $M_r^TM_r = M_rM_r^T$ for analogical inference.
 
@@ -584,7 +584,7 @@ Semantic similarity based scoring measures the plausibility of facts by semantic
 
         Crossover interactions are introduced by CrossE with an interaction matrix $C \in R^{{n_r} \times d}$ to simulate the bi-directional interaction between entity and relation. The relation specific interaction is obtained by looking up interaction matrix ascr = x>r C. By combining the interactive representations and matching with tail embedding, the scoring function is defined as
 
-        $$f(h,r,t) = \sigma (tanh(c_r \ \circ h + c_r \ \circ \ h \circ \ r + b) \ t^T)$$
+        $$f(h,r,t) = \sigma (tanh(c_r \ \circ h + c_r \ \circ \ h \circ \ r + b) \ t^ \mathrm T)$$
 
 
     
@@ -607,18 +607,119 @@ Semantic similarity based scoring measures the plausibility of facts by semantic
 
 Linear models formulate relations as a linear/bilinear mapping by projecting head entities into a representation space close to tail entities. Factorization aims to decompose relational data into low-rank matrices for representation learning. Neural networks encode relational data with non-linear neural activation and more complex network structures by matching semantic similarity of entities and relations.
 
+
+
+<center class='half'>
+<img src=./Pictures/KG_embedding/figure21.png>
+</center> 
+<p align=center> <font color=DarkOliveGreen> Figure12 </font> </p>
+
+
+
 * **Linear/Bilinear Models**
 
+    Linear/bilinear models encode interactions of entities and relations by applying linear operation as:
 
+    $$g_r(h,t) = M_r^T 
+    \begin{pmatrix}
+    h \\
+    t\\
+    \end{pmatrix}
+    $$
+
+    Canonical methods with linear/bilinear encoding include SE, SME, DistMult, ComplEx, and ANALOGY. 
+
+    TransE with L2 regulariazation, 1-d vector linear transformation scoring function:
+
+    $$||h+r-t||_2^2 \ = 2r^T(h-t) - 2h^Tt+||r||_2^2+||h||_2^2+||t||_2^2$$
+
+
+    * **SimplE**
+
+    to solve the independence embedding issue of entity vectors in canonical Polyadia decomposition, SimplE [48] introduces the inverse of relations and calculates the average canonical Polyadia score of $(h, r, t)$ and $(t, r^{−1}, h)$ as
+
+    $$f_r(h,t) = \frac{1}{2}(h \circ rt + t \circ r't)$$
+
+    where $r'$ is the embedding of inversion relation. 
+
+    Embedding models in the bilinear family such as RESCAL, DistMult, HolE and ComplEx can be transformed from one into another with certain constraints
 
 
 
 * **Factorization Models**
 
+    * **RESCAL[6]** (Statistical Relational Learning Approach) 
 
+        <font color=Fuchsia> Three-way model which performs fairly good for relationships which occur frequently **but it performs poor for the rare relationships and leads to major over-fitting.**</font>
+
+        $$f_r(T) = h^tM_rt = \sum_{i=0}^{d-1}\sum_{j=0}^{d-1} [M_r]_{ij}* [h]_i *[t]_j$$
+
+        where $h, t \in R^d$ are vector representation of entities, and $M_r \in R^{d*d}$ is a matrix representation of $r^{th}$ relation.
+
+        <font color=green> In a simple way: $h^TM_rt$ </font>
+
+        we use weighted sum of all the pairwise interactions between the latent features of the entities $h$ and  $t$.
+
+        $\chi_{ijk}=1$ means exist a relation and if $\chi_{ijk}=0$ means their relation is unknown.
+
+        <center class="half">
+        <img src=./Pictures/KG_embedding/figure5.png width = 40%><img src=./Pictures/KG_embedding/figure6.png width = 47%> 
+        </center>
+        <p align=center> <font color=DarkOliveGreen> Figure13  </font> </p>
+
+
+        <font color=red>
+        two-way model means use 2 dimension tensor $d \times d$  
+
+        three-way means use 3 dimension tensor $d \times d \times d$
+        </font>
+
+
+    * **Latent factor model (LFM) [29]**
+
+        **LFM** which extends RESCAL by decomposing
+        $$R_k = \sum_{i=1}^d \alpha_i^ku_iv_i^ \mathrm T$$
+
+    * **TuckER[30]**
+
+        TuckER learns to embed by outputting a core tensor and embedding vectors of entities and relations.
+
+        <center class="half">
+        <img src=./Pictures/KG_embedding/figure22.png width=50%>
+        </center>
+        <p align=center> <font color=DarkOliveGreen> Figure14 </font> </p>
+
+
+        $$φ(e_s, r, e_o) = W ×_1 e_s ×_2 w_r ×_3 e_o$$
+
+
+
+    * **LowFER[31]**
+
+        LowFER proposes a multimodal factorized bilinear pooling mechanism to better fuse entities and relations. It generalizes the TuckER model and is computationally efficient with low-rank approximation.
+
+        Scoring function:
+
+        $$(S^k \ diag(U^Th) \ V^T \ r)^Tt$$
+        $$h,r,t \in R^d$$
 
 
 * **Neural Networks**
+
+    Encoding models with linear/bilinear blocks can also be modeled using neural networks, for example, **SME**. Representative neural models include **multi-layer perceptron (MLP)**, **neural tensor network (NTN)**, and **neural association model (NAM)**. They generally feed entities or relations or both into deep neural networks and compute a semantic matching score.
+
+
+    * **MLP[32]**
+
+        MLP encodes entities and relations together into a fully-connected layer, and uses a second layer with sigmoid activation for scoring a triple as
+
+        $$f_r(h,t) = \sigma(w^T \ \sigma(W[h,r,t]))$$
+
+        where $W$ is the weight matrix, $[h,r,t]$ is a concatenation of three vectors.
+    
+    * **NTN**
+
+        
 
 
 
@@ -656,10 +757,6 @@ Linear models formulate relations as a linear/bilinear mapping by projecting hea
 
 
 
-<center class='half'>
-<img src=./Pictures/KG_embedding/figure21.png>
-</center> 
-<p align=center> <font color=DarkOliveGreen> Figure12 </font> </p>
 
 
 
@@ -732,3 +829,13 @@ Linear models formulate relations as a linear/bilinear mapping by projecting hea
 [27] Hanxiao Liu, Yuexin Wu, & Yiming Yang (2017). *Analogical Inference for Multi-relational Embeddings* international conference on machine learning.
 
 [28] Wen Zhang, Bibek Paudel, Wei Zhang, Abraham Bernstein, & Huajun Chen (2019). *Interaction Embeddings for Prediction and Explanation in Knowledge Graphs* web search and data mining.
+
+[29] Rodolphe Jenatton, Nicolas Le Roux, Antoine Bordes, & Guillaume Obozinski (2012). *A latent factor model for highly multi-relational data* neural information processing systems.
+
+[30] Ivana Balažević, Carl Allen, & Timothy M. Hospedales (2019). *TuckER: Tensor Factorization for Knowledge Graph Completion*.. arXiv: Learning.
+
+[31] Saadullah Amin, Stalin Varanasi, Katherine Ann Dunfield, & Günter Neumann (2020). *LowFER: Low-rank Bilinear Pooling for Link Prediction* international conference on machine learning.
+
+[32] Xin Dong, Evgeniy Gabrilovich, Geremy Heitz, Wilko Horn, Ni Lao, Kevin Murphy, Thomas Strohmann, Shaohua Sun, & Wei Zhang (2014). *Knowledge vault: a web-scale approach to probabilistic knowledge fusion* knowledge discovery and data mining.
+
+
