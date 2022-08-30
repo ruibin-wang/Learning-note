@@ -442,7 +442,7 @@ The embedding space should follow three conditions, i.e., differentiability, cal
 
         Scoring function
 
-        $$\sum_{l=1}^L h^{(l)T}R^{(l)t^{(l)}}$$
+        $$\sum_{l=1}^L h^{(l) \mathrm T}R^{(l)t^{(l)}}$$
 
         $$h^{(l)}, t^{(l)} \in R^2 \qquad R^{(l)} \in D_K$$ 
 
@@ -563,12 +563,6 @@ Semantic similarity based scoring measures the plausibility of facts by semantic
 
 
 
-
-
-
-
-
-
     * **HolEx[26]**
 
         HolEx defines a perturbed holographic compositional operator.
@@ -578,25 +572,94 @@ Semantic similarity based scoring measures the plausibility of facts by semantic
         where $c$ is a fixed vector.  HolEx interpolates the HolE and full tensor product method.  It can be viewed as linear concatenation of perturbed HolE
 
 
+    * **ANALOGY[27]**
+
+        Focusing on multi-relational inference  ANALOGY models analogical structures of relational data. It's scoring function is defined as:
+
+        $$f_r(h,t) = h^TM_rt$$
+
+        with relation matrix constrained to be normal matrices in linear mapping, i.e.,  $M_r^TM_r = M_rM_r^T$ for analogical inference.
+
+    * **CrossE[28]**
+
+        Crossover interactions are introduced by CrossE with an interaction matrix $C \in R^{{n_r} \times d}$ to simulate the bi-directional interaction between entity and relation. The relation specific interaction is obtained by looking up interaction matrix ascr = x>r C. By combining the interactive representations and matching with tail embedding, the scoring function is defined as
+
+        $$f(h,r,t) = \sigma (tanh(c_r \ \circ h + c_r \ \circ \ h \circ \ r + b) \ t^T)$$
+
+
+    
 
 
 
 
 
+    **HolE** with Fourier transformed in the frequency domain can be viewed as a special case of **ComplEx**, which connects holographic and complex embeddings. The analogical embedding framework can recover or equivalently obtain several models such as **DistMult**, ComplEx and HolE by restricting the embedding dimension and scoring function.
 
-
-
-
-
-
-
-
-
+    <center class='half'>
+    <img src=./Pictures/KG_embedding/figure20.png width = 70%>
+    </center> 
+    <p align=center> <font color=DarkOliveGreen> Figure11 </font> </p>
 
 
 
 
 <font size=3> **3.  Encoding models (modeling the semantic interaction of facts)**</font>
+
+Linear models formulate relations as a linear/bilinear mapping by projecting head entities into a representation space close to tail entities. Factorization aims to decompose relational data into low-rank matrices for representation learning. Neural networks encode relational data with non-linear neural activation and more complex network structures by matching semantic similarity of entities and relations.
+
+* **Linear/Bilinear Models**
+
+
+
+
+
+* **Factorization Models**
+
+
+
+
+* **Neural Networks**
+
+
+
+
+
+* **Convolutional Neural Networks**
+
+
+
+
+
+* **Recurrent Neural Networks**
+
+
+
+
+
+* **Transformers**
+
+
+
+
+
+* **Graph Neural Networks (GNNs)**
+
+
+
+
+
+
+
+
+
+
+
+
+
+<center class='half'>
+<img src=./Pictures/KG_embedding/figure21.png>
+</center> 
+<p align=center> <font color=DarkOliveGreen> Figure12 </font> </p>
 
 
 
@@ -665,3 +728,7 @@ Semantic similarity based scoring measures the plausibility of facts by semantic
 [25] Maximilian Nickel, Lorenzo Rosasco, & Tomaso Poggio (2015). *Holographic Embeddings of Knowledge Graphs* national conference on artificial intelligence.
 
 [26] Yexiang Xue, Yang Yuan, Zhitian Xu, & Ashish Sabharwal (2018). *Expanding Holographic Embeddings for Knowledge Completion* neural information processing systems.
+
+[27] Hanxiao Liu, Yuexin Wu, & Yiming Yang (2017). *Analogical Inference for Multi-relational Embeddings* international conference on machine learning.
+
+[28] Wen Zhang, Bibek Paudel, Wei Zhang, Abraham Bernstein, & Huajun Chen (2019). *Interaction Embeddings for Prediction and Explanation in Knowledge Graphs* web search and data mining.
