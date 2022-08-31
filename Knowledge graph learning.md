@@ -754,7 +754,7 @@ Linear models formulate relations as a linear/bilinear mapping by projecting hea
 
         
         <center class="half">
-        <img src=./Pictures/KG_embedding/figure24.png width=60%>
+        <img src=./Pictures/KG_embedding/figure24.png width=45%>
         </center>
         <p align=center> <font color=DarkOliveGreen> Figure16 </font> </p>
 
