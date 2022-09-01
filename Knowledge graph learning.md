@@ -962,23 +962,23 @@ Linear models formulate relations as a linear/bilinear mapping by projecting hea
 
 
 
-4. Summary
+<font size=3> **5. Summary** </font>
 
-    <font color=red>
+  <font color=red>
 
-    Four question for developing a noval KRL:
+Four question for developing a noval KRL:
 
-    (1)  which representation space to choose?
+(1)  which representation space to choose?
 
-    (2)  how to measure the plausibility of triplets in a specific space?
+(2)  how to measure the plausibility of triplets in a specific space?
 
-    (3)  which encoding model to use for modeling relational interactions?
+(3)  which encoding model to use for modeling relational interactions?
 
-    (4)  whether to utilize auxiliary information?
+(4)  whether to utilize auxiliary information?
 
-    </font>
+</font>
 
-    When developing a representation learning model, appropriate representation space should be selected and designed carefully to match the nature of encoding methods and balance the expressiveness and computational complexity.
+When developing a representation learning model, appropriate representation space should be selected and designed carefully to match the nature of encoding methods and balance the expressiveness and computational complexity.
 
 
 
