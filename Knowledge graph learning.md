@@ -836,6 +836,39 @@ Linear models formulate relations as a linear/bilinear mapping by projecting hea
         </center>
         <p align=center> <font color=DarkOliveGreen> Figure19  Diagram for computing the update of a single graph node/entity (red) in the R-GCN model. Activations (d-dimensional vectors) from neighboring nodes (dark blue) are gathered and then transformed for each relation type individually (for both in- and outgoing edges). The resulting representation (green) is accumulated in a (normalized) sum and passed through an activation function (such as the ReLU). This per-node update can be computed in parallel with shared parameters across the whole graph. </font> </p>
 
+        R-GCN proposes relation-specific transformation to model the directed nature of knowledge graphs. *R-GCN takes the neighborhood of each entity equally.*
+
+    
+    * **SACN [42]**
+
+        SACN  introduces weighted GCN (Figure12 b), which defines the strength of two adjacent nodes with the same relation type, to capture the structural information in knowledge graphs by utilizing node structure, node attributes, and relation types. The decoder module called **Conv-TransE** adopts ConvE model as semantic matching metric and preserves the translational property. By aligning the convolutional outputs of entity and relation embeddings with *C* kernels to be $M(h, r) \in R^{C \times d}$, its scoring function is defined as
+
+        $$f_r(h,t) = g(vec(M(h,r)) \ W) \ t$$
+
+        <center class="half">
+        <img src=./Pictures/KG_embedding/figure28.png>
+        </center>
+        <p align=center> <font color=DarkOliveGreen> Figure20 </font> </p>
+
+    
+    * **graph attention network (GATs)**
+
+        GATs with multi-head attention as encoder to capture multi-hop neighborhood features by inputing the concatenation of entity and relation embeddings.
+
+        <center class="half">
+        <img src=./Pictures/KG_embedding/figure29.png>
+        </center>
+        <p align=center> <font color=DarkOliveGreen> Figure21 </font> </p>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -956,3 +989,7 @@ Linear models formulate relations as a linear/bilinear mapping by projecting hea
 [40] Liang Yao, Chengsheng Mao, & Yuan Luo (2019). *KG-BERT: Bert for knowledge graph completion* arXiv: Computation and Language.
 
 [41] Michael Sejr Schlichtkrull, Thomas Kipf, Peter Bloem, Rianne van den Berg, Ivan Titov, & Max Welling (2017). *Modeling Relational Data with Graph Convolutional Networks* european semantic web conference.
+
+[42] Chao Shang, Yun Tang, Jing Huang, Jinbo Bi, Xiaodong He, & Bowen Zhou (2018). *End-to-end Structure-Aware Convolutional Networks for Knowledge Base Completion* national conference on artificial intelligence.
+
+[43] Deepak Nathani, Jatin Chauhan, Charu Sharma, & Manohar Kaul (2019). *Learning Attention-based Embeddings for Relation Prediction in Knowledge Graphs* meeting of the association for computational linguistics.
