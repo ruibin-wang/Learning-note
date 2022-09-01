@@ -861,6 +861,16 @@ Linear models formulate relations as a linear/bilinear mapping by projecting hea
         <p align=center> <font color=DarkOliveGreen> Figure21 </font> </p>
 
 
+    * **CompGCN [44]**
+
+        CompGCN proposes entity-relation composition operations over each edge in the neighborhood of a central node and generalizes previous GCN-based models.
+
+        <center class="half">
+        <img src=./Pictures/KG_embedding/figure30.png>
+        </center>
+        <p align=center> <font color=DarkOliveGreen> Figure22 </font> </p>
+
+
 
 
 
@@ -993,3 +1003,5 @@ Linear models formulate relations as a linear/bilinear mapping by projecting hea
 [42] Chao Shang, Yun Tang, Jing Huang, Jinbo Bi, Xiaodong He, & Bowen Zhou (2018). *End-to-end Structure-Aware Convolutional Networks for Knowledge Base Completion* national conference on artificial intelligence.
 
 [43] Deepak Nathani, Jatin Chauhan, Charu Sharma, & Manohar Kaul (2019). *Learning Attention-based Embeddings for Relation Prediction in Knowledge Graphs* meeting of the association for computational linguistics.
+
+[44] Shikhar Vashishth, Soumya Sanyal, Vikram Nitin, & Partha Pratim Talukdar (2019). *Composition-based Multi-Relational Graph Convolutional Networks Learning*.
