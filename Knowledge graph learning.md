@@ -794,10 +794,8 @@ Linear models formulate relations as a linear/bilinear mapping by projecting hea
             \begin{aligned}
             h_t  \ \ \   x_t \in \epsilon  \\
             S_1h_t \ + \ S_2x_{t-1} \ \ \ \  x_t \in R
-
             \end{aligned}
-            \right.      
-        $$
+            \right.$$
 
 
 
