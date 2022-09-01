@@ -872,40 +872,113 @@ Linear models formulate relations as a linear/bilinear mapping by projecting hea
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <font size=3> **4.  Auxiliary information (utilizing external information)** </font>
+
+* **Textual Description**
+
+    Knowledge Graph and Text Jointly Embedding[45]:   proposed two alignment models for aligning entity space and word space by introducing entity names and Wikipedia anchors.Objective function is:
+
+    $$L = L_K+L_T+L_A$$
+
+    * **DKRL[46]**
+    
+        extends TransE to learn representation directly from entity descriptions by a convolutional encoder.
+
+    * **SSP[47]**  
+    
+        captures the strong correlations between triples and textual descriptions by projecting them in a semantic subspace. Objective function is :
+
+    $$L = L_{embed} + \mu L_{topic}$$
+
+    in which $L_{topic}$ is the textual description.
+
+
+
+* **Type Information**
+
+    entites always can be represented with hierarchical classes or types.
+
+    * **SSE[48]**
+
+        SSE incorporates semantic categories of entities to embed entities belonging to the same category smoothly in semantic space.
+
+
+    * **TKRL[49]**
+
+        TKRL proposes type encoder model for projection matrix of entities to capture type hierarchy. Noticing that some relations indicate attributes of entities.
+
+        <center class="half">
+        <img src=./Pictures/KG_embedding/figure31.png width=50%>
+        </center>
+        <p align=center> <font color=DarkOliveGreen> Figure23 </font> </p>
+
+
+    * **KR-EAR[50]**
+
+        KR-EAR categorizes relation types into attributes and relations and modeled the correlations between entity descriptions.
+
+
+        <center class="half">
+        <img src=./Pictures/KG_embedding/figure32.png>
+        </center>
+        <p align=center> <font color=DarkOliveGreen> Figure24 </font> </p>
+
+    * **Hierarchical Relation Structure(HRS)**
+
+        HRS extended existing embedding methods with hierarchical relation structure of relation clusters, relations, and sub-relations.
+
+        <center class="half">
+        <img src=./Pictures/KG_embedding/figure33.png>
+        </center>
+        <p align=center> <font color=DarkOliveGreen> Figure25 </font> </p>
+
+
+
+
+* **Visual Information**
+
+    e.g., entity images can be utilized to enrich KRL.
+
+    * **Image-embodied IKRL[52]**
+
+        Containing cross-modal structure-based and imagebased representation, encodes images to entity space and follows the translation principle. The cross-modal representations make sure that structure-based and image-based representations are in the same representation space.
+
+        <center class="half">
+        <img src=./Pictures/KG_embedding/figure34.png>
+        </center>
+        <p align=center> <font color=DarkOliveGreen> Figure26 </font> </p>
+
+    
+    Ref [53] gave a detailed review of using additional information.
+
+
+
+* **Uncertain Information**
+
+    * knowledge graphs contain uncertain information with a confudence score assigned to every relation fact. ProBase[54], NELL[55], and ConceptNet[56].
+
+
+    *  uncertain embedding models aim to capture uncertainty representing the likelihood of relational facts.
+
+
+
+4. Summary
+
+    <font color=red>
+
+    Four question for developing a noval KRL:
+
+    (1)  which representation space to choose?
+
+    (2)  how to measure the plausibility of triplets in a specific space?
+
+    (3)  which encoding model to use for modeling relational interactions?
+
+    (4)  whether to utilize auxiliary information?
+
+    </font>
+
+    When developing a representation learning model, appropriate representation space should be selected and designed carefully to match the nature of encoding methods and balance the expressiveness and computational complexity.
 
 
 
@@ -1005,3 +1078,27 @@ Linear models formulate relations as a linear/bilinear mapping by projecting hea
 [43] Deepak Nathani, Jatin Chauhan, Charu Sharma, & Manohar Kaul (2019). *Learning Attention-based Embeddings for Relation Prediction in Knowledge Graphs* meeting of the association for computational linguistics.
 
 [44] Shikhar Vashishth, Soumya Sanyal, Vikram Nitin, & Partha Pratim Talukdar (2019). *Composition-based Multi-Relational Graph Convolutional Networks Learning*.
+
+[45] Zhen Wang, Jianwen Zhang, Jianlin Feng, & Zheng Chen (2014). *Knowledge Graph and Text Jointly Embedding* empirical methods in natural language processing.
+
+[46] Ruobing Xie, Zhiyuan Liu, Jia Jia, Huanbo Luan, & Maosong Sun (2016). *Representation learning of knowledge graphs with entity descriptions* national conference on artificial intelligence.
+
+[47] Han Xiao, Minlie Huang, & Xiaoyan Zhu (2016). *SSP: Semantic Space Projection for Knowledge Graph Embedding with Text Descriptions* arXiv: Computation and Language.
+
+[48] Shu Guo, Quan Wang, Bin Wang, Lihong Wang, & Li Guo (2015). *Semantically Smooth Knowledge Graph Embedding* international joint conference on natural language processing.
+
+[49] Ruobing Xie, Zhiyuan Liu, & Maosong Sun (2016). *Representation learning of knowledge graphs with hierarchical types* international joint conference on artificial intelligence.
+
+[50] Yankai Lin, Zhiyuan Liu, & Maosong Sun (2016). *Knowledge representation learning with entities, attributes and relations* international joint conference on artificial intelligence.
+
+[51] Zhao Zhang, Fuzhen Zhuang, Meng Qu, Fen Lin, & Qing He (2018). *Knowledge Graph Embedding with Hierarchical Relation Structure* empirical methods in natural language processing.
+
+[52] Ruobing Xie, Zhiyuan Liu, Huanbo Luan, & Maosong Sun (2016). *Image-embodied Knowledge Representation Learning* international joint conference on artificial intelligence.
+
+[53] Quan Wang, Zhendong Mao, Bin Wang, & Li Guo (2017). *Knowledge Graph Embedding: A Survey of Approaches and Applications* IEEE Transactions on Knowledge and Data Engineering.
+
+[54] Wentao Wu, Hongsong Li, Haixun Wang, & Kenny Q. Zhu (2012). *Probase: a probabilistic taxonomy for text understanding* international conference on management of data.
+
+[55] Andrew Carlson, Justin Betteridge, Bryan Kisiel, Burr Settles, Estevam R. Hruschka, & Tom M. Mitchell (2010). *Toward an architecture for never-ending language learning* national conference on artificial intelligence.
+
+[56] Robert Speer, Joshua Chin, & Catherine Havasi (2016). *ConceptNet 5.5: An Open Multilingual Graph of General Knowledge* national conference on artificial intelligence.
