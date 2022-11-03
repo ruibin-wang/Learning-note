@@ -2,9 +2,9 @@
 
 ## code and turtorial
 
-The code can be find in the file "neo4j_data_construct.py" at: https://github.com/ruibin-wang/web_crawler_graph_building.git
+* The code can be find in the file "neo4j_data_construct.py" at: https://github.com/ruibin-wang/web_crawler_graph_building.git
 
-
+* The turtorial can be found at: https://www.youtube.com/watch?v=IShRYPsmiR8&t=527s 
 
 
 
@@ -80,9 +80,6 @@ CREATE (p)-[R:studeied_at]->(s)
 
 ```
 
-
-
-<font size=3> **neo4j** </font>
 
 
 
