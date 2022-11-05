@@ -55,8 +55,6 @@ The turtorial can be found at: https://cloud.tencent.com/developer/article/17840
     
     ## get rid of symbols of the html, just choose the text
     <tag>.get_text()
-
-
     ```
 
 ## Regular Expression, re
