@@ -105,3 +105,28 @@ import urllib.request
 content = urllib.request.urlopen(url) ## get the content of the webpage
 
 ```
+
+## Scrapy
+
+Turtorial for this tookit can be found at: https://cloud.tencent.com/developer/article/1856557 
+
+
+### 
+
+### install
+
+```python
+## the following steps can be realised in the terminal
+## first step 
+pip install scrapy
+
+## second step, test whether it is succeed
+scrapy bench
+
+## third step, create the spider file
+scrapy startproject ProjectName   
+cd ProjectName   # direct to the object file
+scrapy genspider 
+
+```
+
