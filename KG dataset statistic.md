@@ -177,6 +177,46 @@ for element in response['itemListElement']:
 
 ## Domain-specific datasets
 
-|||||||
+|Name of the KG set|Domain|Size|Published Year|Institution|Acessable|Link|
+|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+|**ResearchSpace**|cultural heritage knowledge graph||||||
+|**UMLS**|unified medical language system||||||
+|**SNOMED CT**|commercial clinical terminology||||||
+|**Yidu Research**|medical knowledge graph||||||
+|**STRING**|protein-protein interaction networks||||||
+|**SKEMPI**|a Structural Kinetic and Energetic database of Mutant Protein Interactions||||||
+|**Protein Data Bank (PDB) database**|containing biological molecular data||||||
+|**GeneOntology**|a gene ontology resource that describes protein function||||||
+|**DrugBank**|a pharmaceutical knowledge base||||||
+|****|||||||
 
 
+
+
+
+
+
+
+
+
+
+## Task-Specific Datasets
+
+|Name of the KG set|Domain|Size|Published Year|Institution|Acessable|Link|
+|:-----|:-----|:-----|:-----|:-----|:-----|:-----|
+|**WN18**||||||||
+|**FB15K**||||||||
+|**WN11**||||||||
+|**FB13**||||||||
+|**WN18RR**||||||||
+|**FB15k-237**||||||||
+|**FB5M**||||||||
+|**FB40K**||||||||
+
+
+
+
+
+
+
+A popular way of generating task-specific datasets is to sample subsets from large general datasets. Statistics of several datasets for tasks on the knowledge graph itself are listed in Table VIII. Notice that WN18 and FB15k suffer from test set leakage [55]. For KRL with auxiliary information and other downstream knowledge-aware applications, texts and images are also collected, for example, WN18-IMG [71] with sampled images and textual relation extraction dataset including SemEval 2010 dataset, NYT [245] and Google-RE13. IsaCore [246], an analogical closure of Probase for opinion mining and sentiment analysis, is built by common knowledge base blending and multi-dimensional scaling. Recently, the FewRel dataset [247] was built to evaluate the emerging few-shot relation classification task. There are also more datasets for specific tasks such as cross-lingual DBP15K [128] and DWY100K [127] for entity alignment, multi-view knowledge graphs of YAGO26K-906 and DB111K174 [119] with instances and ontologies.
