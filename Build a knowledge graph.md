@@ -1,6 +1,6 @@
 # Building a knowledge graph
 
-## KG database
+## General KG database
 
 the most popular KG database including: 
 
@@ -102,7 +102,7 @@ the most popular KG database including:
     ```
 
 
-## YAGO
+### YAGO
 
 YAGO is a knowledge base, i.e., a database with knowledge about the real world. YAGO contains both entities (such as movies, people, cities, countries, etc.) and relations between these entities (who played in which movie, which city is located in which country, etc.). All in all, YAGO contains more than 50 million entities and 2 billion facts.
 
@@ -115,18 +115,18 @@ YAGO is a knowledge base, i.e., a database with knowledge about the real world. 
 
 
 
-## OpenCyc
+### OpenCyc
 
 * The Cyc knowledge base from Cycorp contains about 1.5 million general concepts and more than 20 million general rules, with an accessible version called OpenCyc deprecated sine 2017.
 
 * the language of Cyc is **CycL**.
 
 
-## Freebase
+### Freebase
 * On 16 December 2015, Google officially announced the Knowledge Graph API, which is meant to be a replacement to the Freebase API. Freebase.com was officially shut down on 2 May 2016.
 
 
-## NELL
+### NELL
 
 * NELL is built from the Web via an intelligent agent called Never-Ending Language Learner. It has 2,810,379 beliefs with high confidence by far.
 
@@ -137,12 +137,12 @@ YAGO is a knowledge base, i.e., a database with knowledge about the real world. 
     * Second, it attempts to improve its reading competence, so that tomorrow it can extract more facts from the web, more accurately.
 
 
-## Wikidata
+### Wikidata
 * Wikidata is a free structured knowledge base, which is created and maintained by human editors to facilitate the management of Wikipedia data. It is multi-lingual with 358 different languages.
 
 
 
-## Google KG
+### Google KG
 Python code to visit the Google knowledge graph
 ```python
 ## first, need to config the google API
@@ -168,11 +168,15 @@ for element in response['itemListElement']:
 ```
 
 
-## Probase
+### Probase
 * Microsoft builds a probabilistic taxonomy called Probase with 2.7 million concepts. 
 * the official doc has rich description of the advantages of their datasets
 
 
 
+
+## Domain-specific datasets
+
+|||||||
 
 
