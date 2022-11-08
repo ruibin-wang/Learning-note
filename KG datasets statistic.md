@@ -180,7 +180,7 @@ for element in response['itemListElement']:
 |Name of the KG set|Domain|Size|Published Year|Institution|Acessable|Link|
 |:-----|:-----|:-----|:-----|:-----|:-----|:-----|
 |**ResearchSpace**|cultural heritage knowledge graph||||||
-|**UMLS**|unified medical language system||||||
+|**UMLS**|unified medical language system||||Need License, Microsoft account||
 |**SNOMED CT**|commercial clinical terminology||||||
 |**Yidu Research**|medical knowledge graph||||||
 |**STRING**|protein-protein interaction networks||||||
