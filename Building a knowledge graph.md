@@ -1,5 +1,7 @@
 # Building a knowledge graph
 
+the following description comes from the tutorial link: https://www.analyticsvidhya.com/blog/2019/10/how-to-build-knowledge-graph-text-using-spacy/#h2_6  and code: https://colab.research.google.com/drive/1YTv-9ENIeVWCGqvjwVSTfChAaj05vV0h#scrollTo=RtN8y8chs3zJ
+
 ## Step 1: Entities Extraction
 
 *  use the parts of speech (POS) tags. The Nouns and the proper nouns would be entities.
@@ -41,27 +43,54 @@ tournament ... dobj
 
 ## Step2: Extract Relations
 
-* the relation of two entities can also be extracted through 'dependency parsing' by using the Root of the sentences (which is also the verb of the sentence).
+* the relation of two entities can also be extracted through 'dependency parsing' by using the Root of the sentences (which is also the verb of the sentence). **Rule-based method!**
 
-* code can be found as follows:
-```python
-## code
-doc = nlp("Nagal won the first set.")
+    * code for this rule-based method can be found as follows:
+        ```python
+        ## code
+        doc = nlp("Nagal won the first set.")
 
-for tok in doc:
-    print(tok.text, "...", tok.dep_)
-
-
-## output
-Nagal ... nsubj
-won ... ROOT
-the ... det
-first ... amod
-set ... dobj
-. ... punct
-
-```
+        for tok in doc:
+            print(tok.text, "...", tok.dep_)
 
 
+        ## output
+        Nagal ... nsubj
+        won ... ROOT
+        the ... det
+        first ... amod
+        set ... dobj
+        . ... punct
+
+        ```
 
 
+## Build a graph
+
+Two method to build this graph,
+
+* one is to use the .csv data, and networkx package
+
+    ```python
+    import networkx as nx
+    # extract subject
+    source = [i[0] for i in entity_pairs]
+
+    # extract object
+    target = [i[1] for i in entity_pairs]
+
+    kg_df = pd.DataFrame({'source':source, 'target':target, 'edge':relations})
+
+    # create a directed-graph from a dataframe
+    G=nx.from_pandas_edgelist(kg_df, "source", "target", 
+                            edge_attr=True, create_using=nx.MultiDiGraph())
+
+
+    plt.figure(figsize=(12,12))
+
+    pos = nx.spring_layout(G)
+    nx.draw(G, with_labels=True, node_color='skyblue', edge_cmap=plt.cm.Blues, pos = pos)
+    plt.show()
+    ```
+
+* another method is to use the .csv data to build the graph in Neo4j database. code can be found in my [github](https://github.com/ruibin-wang/web_crawler_graph_building/blob/main/json2neo.py)
