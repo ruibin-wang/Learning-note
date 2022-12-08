@@ -39,6 +39,6 @@
 
 ## MR
 
-* MR is a movie review dataset for binary sentiment classification, in which each review only contains one sentence (Pang and Lee 2005). The corpus has 5,331 positive and 5,331 negative reviews. We used the training/test split in (Tang, Qu, and Mei 2015).
+* MR is a **movie review dataset** for binary sentiment classification, in which each review only contains one sentence (Pang and Lee 2005). The corpus has 5,331 positive and 5,331 negative reviews. We used the training/test split in (Tang, Qu, and Mei 2015).
 
 
