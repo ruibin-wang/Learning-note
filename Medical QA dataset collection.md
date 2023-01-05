@@ -125,6 +125,17 @@ Long Answer: Smoking increases a person's chances of developing AMD by two to fi
 
 
 
+## BIG-bench (Beyond the Imitation Game Benchmark)
+
+* The Beyond the Imitation Game Benchmark (BIG-bench) is a collaborative benchmark intended to probe large language models and extrapolate their future capabilities. Big-bench include **more than 200 tasks**.
+
+* Image shows a word cloud of task keywords.
+
+
+* Paper can be found here: https://arxiv.org/pdf/2206.04615.pdf
+
+
+
 ## dataset from other sources
 
 
